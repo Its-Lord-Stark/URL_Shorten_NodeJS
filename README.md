@@ -20,7 +20,6 @@ This URL Shortener service, built with Node.js, Express.js, and MongoDB, provide
 
 First, clone the repository to your local machine:
 
-```bash
 git clone https://github.com/<your-username>/url-shortener.git
 cd url-shortener
 npm install
