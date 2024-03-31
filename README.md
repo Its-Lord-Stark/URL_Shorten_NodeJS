@@ -25,9 +25,10 @@ This URL Shortener service, built with Node.js, Express.js, and MongoDB, provide
     npm install
     ```
 
-2. Create a `.env` file in the root directory and add your MongoDB URI:
+2. Create a `.env` file in the root directory and add your MongoDB URI and PORT:
     ```
     MONGODB_URI=mongodb...
+    PORT=8000
     ```
 
 3. To start the server, run:
@@ -45,3 +46,17 @@ Send a POST request to `/url` with a JSON body containing the URL:
 {
   "url": "https://example.com"
 }
+```
+
+### Redirecting to URL
+You can also navigate to be redirected to the original URL using,
+```
+/:shortId
+```
+
+### Retrieving URL Analytics
+
+To get analytics for a shortened URL, send a GET request to 
+```
+"/url/analytics/:shortId"
+```
