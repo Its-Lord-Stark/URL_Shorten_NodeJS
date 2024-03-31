@@ -1,10 +1,11 @@
 const express = require("express");
+require('dotenv').config();
 const app = express();
 const {connectToMongoDB,} = require('./connect');
 const urlRoute = require('./routes/url')
-const PORT = 8010;
+const PORT = process.env.PORT;
 
-connectToMongoDB("mongodb://localhost:27017/short-url")
+connectToMongoDB(process.env.MONGODB_URI)
 .then(() => {console.log('MongoDB connected')});
 
 app.use(express.json());
