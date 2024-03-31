@@ -26,14 +26,14 @@ cd url-shortener
 npm install
 
 
-Create a .env file in the root directory and add your MongoDB URI:
+### Create a .env file in the root directory and add your MongoDB URI:
 
 MONGODB_URI=mongodb...
 
 To start the server, run:
 npm run dev
 
-Usage
+### Usage
 Shortening a URL
 Send a POST request to /url with a JSON body containing the URL:
 json
