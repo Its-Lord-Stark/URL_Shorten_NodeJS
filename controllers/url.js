@@ -15,7 +15,15 @@ async function handleGenerateShortUrl(req,res)
             redirectURL:body.url,
             visitHistory:[]
         });
-        return res.json({id:shortID});
+        return res.status(200).json({id:shortID});
 }
 
-module.exports = {handleGenerateShortUrl,}
+async function handleGetAnalytics(req,res){
+    const shortId = req.params.shortId;
+    const result = await URL.findOne({
+        shortId,
+    });
+    return res.status(200).json({count:result.visitHistory.length,Analytics: result.visitHistory})
+}
+
+module.exports = {handleGenerateShortUrl, handleGetAnalytics}
