@@ -1,26 +1,47 @@
 # Node.js URL Shortener
 
-This project is a simple URL shortener built with Node.js and Express, allowing users to create short, memorable URLs from longer ones.
+This URL Shortener service, built with Node.js, Express.js, and MongoDB, provides a RESTful API for shortening URLs and tracking their analytics. It's designed to be simple to set up and use.
 
 ## Features
 
-- Shorten URLs to more manageable links
-- Analyze visit history for each shortened URL
-- Simple RESTful API interface
-- Easy to set up and deploy
+- Easy URL shortening
+- Analytics for tracking URL visits
+- REST API
 
-## Prerequisites
+## Getting Started
 
-Before you begin, ensure you have met the following requirements:
+### Prerequisites
 
-- Node.js (v14 or later recommended)
-- npm (Node Package Manager)
-- MongoDB installed and running for storing the URL data
+- Node.js (v14+)
+- npm
+- MongoDB
 
-## Installation
+### Installation
 
-Clone the repository to your local machine:
+First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/url-shortener.git
+git clone https://github.com/<your-username>/url-shortener.git
 cd url-shortener
+npm install
+
+
+Create a .env file in the root directory and add your MongoDB URI:
+
+MONGODB_URI=mongodb...
+
+To start the server, run:
+npm run dev
+
+Usage
+Shortening a URL
+Send a POST request to /url with a JSON body containing the URL:
+json
+{
+  "url": "https://example.com"
+}
+
+Retrieving URL Analytics
+To get analytics for a shortened URL, send a GET request to /url/analytics/:shortId.
+
+You can also navigate to /url/:shortId to be redirected to the original URL.
