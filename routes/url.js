@@ -7,6 +7,7 @@ router.post("/" , handleGenerateShortUrl);
 
 router.get('/analytics/:shortId', handleGetAnalytics),
 
+
 router.get('/:shortId', async(req,res) => {
     const shortId = req.params.shortId;
     const entry = await URL.findOneAndUpdate(
